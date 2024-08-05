@@ -1,0 +1,22 @@
+<html>
+<head>
+
+</head>
+<body>
+    <button id="changebutton">GetIP</button>
+<script>
+document.getElementById("changebutton").addEventListener("click",function(){
+fetch('https://api.ipify.org/?format=json')
+.then(res=>res.json())
+.then(d=>{document.getElementById("changebutton").innerHTML=d.ip});
+
+    });
+
+
+</script>
+
+
+</body>
+
+
+</html>

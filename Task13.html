@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<label>First Name:</label><br>
+<input type="text" name="name" id="name" placeholder="name"><br>
+<button id="submitbutton">Submit</button><br>
+
+<script>
+document.getElementById('submitbutton').addEventListener('click', function() {
+    var name = document.getElementById('name').value;
+    if (name) {
+        fetch(`https://api.agify.io?name=${name}`)
+            .then(res => res.json())
+            .then(d => {
+                const { name, age } = d;
+                alert(`Your name is: ${name}\nYour age is: ${age}`);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    } else {
+        alert('Please enter a name.');
+    }
+});
+</script>
+</body>
+</html>

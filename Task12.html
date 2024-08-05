@@ -1,0 +1,32 @@
+<html>
+<html >
+<head>
+
+</head>
+<body>
+    <form id="FORM">
+        <label>Name:</label><br>
+        <input type="text" name="Name" id="name" placeholder="name"><br>
+        <label>Age:</label><br>
+        <input type="text" name="Age" id="age" placeholder="age"><br>
+        <button type="button" onclick="subform()">Submit</button>
+    </form>
+    <script>
+        function subform() {
+            
+            var name = document.getElementById("name").value;
+            var age = document.getElementById("age").value;
+            var time = new Date().toLocaleString();
+
+            const user = {
+                name: name,
+                age: age,
+                time: time
+            };
+              
+            
+            alert(`Your name is: ${user.name}\nYour age is: ${user.age}\nTimestamp: ${user.time}`);
+        }
+    </script>
+</body>
+</html>
