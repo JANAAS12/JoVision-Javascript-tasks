@@ -1,0 +1,24 @@
+<html>
+<head>
+</head>
+<body>
+    <div id="time"></div>
+<script>
+ function currentTime(){
+    const now=new Date();
+    const hour=String(now.getHours()).padStart(2, '0');
+    const minute=String(now.getMinutes()).padStart(2, '0');
+    const second=String(now.getSeconds()).padStart(2, '0');
+    const Time = `${hour}:${minute}:${second}`;
+    document.getElementById('time').textContent = Time;
+    
+ }
+
+
+ currentTime();
+
+setInterval(currentTime, 1000);
+</script>
+</body>
+</html>
+
